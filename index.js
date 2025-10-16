@@ -1,4 +1,6 @@
 const express = require("express")
+const dotenv = require("dotenv")
+dotenv.config();
 
 const app = express()
 
@@ -9,6 +11,13 @@ app.get("/", (req,res) => {
 	})
 }) 
 
-app.listen(3000,() => {
+app.get("/home", (req,res) => {
+	return res.json({
+		"path" : req.path,
+		"success" : true
+	})
+})
+
+app.listen(process.env.PORT,() => {
 	console.log("Server is listening on PORT 3000")
 })
