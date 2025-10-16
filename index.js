@@ -19,5 +19,5 @@ app.get("/home", (req,res) => {
 })
 
 app.listen(process.env.PORT,() => {
-	console.log("Server is listening on PORT 3000")
+	console.log(`Server is listening on PORT ${process.env.PORT}`)
 })
